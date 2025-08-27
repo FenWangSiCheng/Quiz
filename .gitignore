@@ -148,3 +148,6 @@ Thumbs.db
 # Build outputs
 dist/
 build/
+
+# Claude Code local configuration
+.claude
