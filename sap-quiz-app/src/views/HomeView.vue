@@ -8,7 +8,7 @@
         </div>
         <div class="stats-section">
           <div class="stat-item">
-            <span class="stat-number">21</span>
+            <span class="stat-number">{{ questions.length }}</span>
             <span class="stat-label">题</span>
           </div>
           <div v-if="statistics" class="stat-item">
@@ -89,7 +89,7 @@
           <p>选择左侧的练习模式开始学习</p>
           <div class="stats-preview">
             <div class="stat-preview-item">
-              <span class="stat-preview-number">21</span>
+              <span class="stat-preview-number">{{ questions.length }}</span>
               <span class="stat-preview-label">道题目</span>
             </div>
             <div class="stat-preview-item">
@@ -114,19 +114,23 @@
             <h4>📊 题型分布</h4>
             <div class="type-list">
               <div class="type-item">
+                <span class="type-label">判断题</span>
+                <span class="type-count">{{ Math.round((questions.filter(q => q.type === 'true_false').length / questions.length) * 100) }}%</span>
+              </div>
+              <div class="type-item">
                 <span class="type-label">单选题</span>
-                <span class="type-count">75%</span>
+                <span class="type-count">{{ Math.round((questions.filter(q => q.type === 'single_choice').length / questions.length) * 100) }}%</span>
               </div>
               <div class="type-item">
                 <span class="type-label">多选题</span>
-                <span class="type-count">25%</span>
+                <span class="type-count">{{ Math.round((questions.filter(q => q.type === 'multiple_choice').length / questions.length) * 100) }}%</span>
               </div>
             </div>
           </div>
           
           <div class="info-card">
             <h4>ℹ️ 说明</h4>
-            <p>共21道题目，涵盖SAP Build Process Automation相关知识点，支持进度保存和断点续答。</p>
+            <p>共{{ questions.length }}道题目，涵盖SAP Build Process Automation和SAP Build Work Zone相关知识点，支持进度保存和断点续答。</p>
           </div>
         </div>
       </aside>
@@ -138,6 +142,7 @@
 import { computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useQuizStore } from '@/stores/quiz'
+import { questions } from '@/data/questions'
 import { List, Refresh, Clock } from '@element-plus/icons-vue'
 import { ElMessage } from 'element-plus'
 

@@ -2,6 +2,12 @@
 
 This repository contains learning materials for SAP technologies and a Vue.js-based quiz application for testing SAP knowledge.
 
+## 🌐 Live Demo
+
+**[Access the SAP Quiz Application](https://stalwart-marigold-edcacd.netlify.app/)**
+
+The application is deployed on Netlify and includes 31+ quiz questions covering SAP Build Process Automation and SAP Build Work Zone topics.
+
 ## 📚 Structure
 
 ### Study Notes
@@ -58,20 +64,24 @@ The study notes cover various SAP technologies including:
 
 ## 🎯 Quiz Application Features
 
-- **Multiple Choice Questions**: Comprehensive SAP knowledge testing
-- **Progress Tracking**: Monitor your learning progress
-- **Instant Feedback**: Get immediate results and explanations
+- **31+ Quiz Questions**: Comprehensive SAP knowledge testing covering Process Automation and Work Zone
+- **Multiple Question Types**: True/False, Single Choice, and Multiple Choice questions
+- **Progress Tracking**: Monitor your learning progress with session persistence
+- **Instant Feedback**: Get immediate results and detailed explanations
 - **Responsive Design**: Works on desktop and mobile devices
 - **Score Analytics**: Track your performance over time
+- **Two Quiz Modes**: Sequential and randomized question ordering
 
 ## 🛠 Technologies Used
 
 - **Frontend**: Vue.js 3, TypeScript, Vite
+- **UI Framework**: Element Plus
 - **Styling**: CSS3, Responsive design
 - **State Management**: Pinia
 - **Routing**: Vue Router
 - **Build Tool**: Vite
 - **Package Manager**: npm
+- **Deployment**: Netlify
 
 ## 📝 Contributing
 
