@@ -83,7 +83,9 @@ Feel free to contribute by:
 
 ## 📄 License
 
-This project is for educational purposes.
+This project is licensed under the Educational Use License - see the [LICENSE](LICENSE) file for details.
+
+**Educational Use Only**: This software is intended solely for educational, learning, and non-commercial purposes. Commercial use is strictly prohibited.
 
 ## 📞 Contact
 
