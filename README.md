@@ -83,9 +83,7 @@ Feel free to contribute by:
 
 ## 📄 License
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
-
-**Open Source**: This software is free to use, modify, and distribute for both personal and commercial purposes under the terms of the Apache 2.0 license.
+All rights reserved. This project does not have an open source license.
 
 ## 📞 Contact
 
