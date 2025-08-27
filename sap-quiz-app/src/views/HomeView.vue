@@ -111,24 +111,6 @@
           </div>
           
           <div class="info-card">
-            <h4>📊 题型分布</h4>
-            <div class="type-list">
-              <div class="type-item">
-                <span class="type-label">判断题</span>
-                <span class="type-count">{{ Math.round((questions.filter(q => q.type === 'true_false').length / questions.length) * 100) }}%</span>
-              </div>
-              <div class="type-item">
-                <span class="type-label">单选题</span>
-                <span class="type-count">{{ Math.round((questions.filter(q => q.type === 'single_choice').length / questions.length) * 100) }}%</span>
-              </div>
-              <div class="type-item">
-                <span class="type-label">多选题</span>
-                <span class="type-count">{{ Math.round((questions.filter(q => q.type === 'multiple_choice').length / questions.length) * 100) }}%</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="info-card">
             <h4>ℹ️ 说明</h4>
             <p>共{{ questions.length }}道题目，涵盖SAP Build Process Automation和SAP Build Work Zone相关知识点，支持进度保存和断点续答。</p>
           </div>
