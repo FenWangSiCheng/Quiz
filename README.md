@@ -83,9 +83,9 @@ Feel free to contribute by:
 
 ## 📄 License
 
-This project is licensed under the Educational Use License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
-**Educational Use Only**: This software is intended solely for educational, learning, and non-commercial purposes. Commercial use is strictly prohibited.
+**Open Source**: This software is free to use, modify, and distribute for both personal and commercial purposes under the terms of the Apache 2.0 license.
 
 ## 📞 Contact
 
