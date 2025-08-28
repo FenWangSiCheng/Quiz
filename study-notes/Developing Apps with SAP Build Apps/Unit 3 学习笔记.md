@@ -238,87 +238,85 @@ Unit 3 专注于 SAP Build Apps 中的变量和数据类型系统，深入介绍
 
 ### Quiz 题目与答案解析
 
-#### 题目 1：变量类型指导工具
-**Question**: "What guides you when setting a variable with data that does not conform to the data type?"
+#### 题目 1：应用变量与页面变量差异
+**Question**: "What is the main difference between an app variable and a page variable?"
 **Type**: Single Select (1 correct answer)
 
 **All Options**:
-1. Formula editor
-2. Property editor
-3. Logic canvas
-4. Variable manager
-
-**Correct Answer**:
-- Formula editor
-
-**Incorrect Answers**:
-- Property editor
-- Logic canvas
-- Variable manager
-
-**解析**：公式编辑器在设置不符合数据类型的变量时提供类型检查和指导，帮助开发者避免数据类型不匹配的问题。
-
-#### 题目 2：应用变量与页面变量差异
-**Question**: "What is the difference between an app variable and a page variable?"
-**Type**: Single Select (1 correct answer)
-
-**All Options**:
-1. An app variable can be referenced anywhere, but a page variable can only be referenced in a particular page
-2. An app variable stores temporary data, but a page variable stores persistent data
-3. An app variable is created automatically, but a page variable must be created manually
-4. An app variable uses global namespace, but a page variable uses local namespace
+1. An app variable can have fewer data types than a page variable
+2. An app variable's value can be set once and not changed
+3. An app variable can be referenced anywhere, but a page variable can only be referenced in a particular page
+4. You can have only one app variable but many page variables
 
 **Correct Answer**:
 - An app variable can be referenced anywhere, but a page variable can only be referenced in a particular page
 
 **Incorrect Answers**:
-- An app variable stores temporary data, but a page variable stores persistent data
-- An app variable is created automatically, but a page variable must be created manually
-- An app variable uses global namespace, but a page variable uses local namespace
+- An app variable can have fewer data types than a page variable
+- An app variable's value can be set once and not changed
+- You can have only one app variable but many page variables
 
 **解析**：这是应用变量和页面变量的根本区别，应用变量具有全局作用域可在任何地方引用，而页面变量只能在特定页面中引用。
 
-#### 题目 3：变量使用原因
-**Question**: "Why would you use variables?"
+#### 题目 2：变量使用原因
+**Question**: "What are the reasons for using variables?"
 **Type**: Multiple Select (2 correct answers)
 
 **All Options**:
-1. To store temporary data, such as user preferences
-2. To store data retrieved from back-end data source
-3. To improve application performance
-4. To create better user interfaces
-5. To reduce code complexity
+1. To connect to the back-end data
+2. To store temporary data, such as user preferences
+3. To store data retrieved from back-end data source
+4. To define application logic
 
 **Correct Answers**:
 - To store temporary data, such as user preferences
 - To store data retrieved from back-end data source
 
 **Incorrect Answers**:
-- To improve application performance
-- To create better user interfaces
-- To reduce code complexity
+- To connect to the back-end data
+- To define application logic
 
 **解析**：变量的两个核心使用目的是存储临时数据（如用户偏好）和存储从后端数据源检索的数据，这体现了变量作为数据容器的基本功能。
 
-#### 题目 4：后端数据存储变量类型
-**Question**: "What type of variable is used to store information retrieved from a back-end system?"
+#### 题目 3：后端数据存储变量类型
+**Question**: "Which variable do you use to store information retrieved from a back-end system?"
 **Type**: Single Select (1 correct answer)
 
 **All Options**:
 1. App variable
-2. Page variable
-3. Data variable
-4. Page parameter
+2. Page parameter
+3. Page variable
+4. Data variable
 
 **Correct Answer**:
 - Data variable
 
 **Incorrect Answers**:
 - App variable
-- Page variable
 - Page parameter
+- Page variable
 
-**解析**：数据变量专门用于存储从后端系统检索的信息，它能够连接外部数据资源并自动处理数据类型映射。
+**解析**：数据变量专门用于存储从后端系统检索的信息，这是其设计的主要目的和最佳实践用法。
+
+#### 题目 4：变量类型指导工具
+**Question**: "Which of the following will guide you if you try to set a variable with a value that does not conform to its data type?"
+**Type**: Single Select (1 correct answer)
+
+**All Options**:
+1. Marketplace
+2. Lobby
+3. Formula editor
+4. Data tab
+
+**Correct Answer**:
+- Formula editor
+
+**Incorrect Answers**:
+- Marketplace
+- Lobby
+- Data tab
+
+**解析**：公式编辑器在设置不符合数据类型的变量值时提供类型检查和指导，帮助开发者避免数据类型不匹配的问题。
 
 ### Quiz 通过标准
 - **及格要求**：至少答对 3 道题目才能通过此单元

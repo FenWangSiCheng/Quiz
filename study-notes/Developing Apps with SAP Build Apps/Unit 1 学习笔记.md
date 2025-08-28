@@ -132,25 +132,25 @@ SAP Build Apps 是一个无代码/低代码应用开发平台，通过拖放方�
 
 ### Quiz 题目与答案解析
 
-#### 题目 1：应用组成要素
-**Question**: "What are the three parts of a typical application?"
-**Type**: Multiple Select (3 correct answers)
+#### 题目 1：项目创建配置
+**Question**: "Which two fields can you enter while creating a new project?"
+**Type**: Multiple Select (2 correct answers)
 
 **All Options**:
-1. Build configuration
-2. User interface
-3. Logic
-4. Data
+1. Title
+2. Name of home page
+3. Description
+4. Permissions
 
 **Correct Answers**:
-- User interface
-- Logic
-- Data
+- Title
+- Description
 
-**Incorrect Answer**:
-- Build configuration
+**Incorrect Answers**:
+- Name of home page
+- Permissions
 
-**解析**：这道题目考查对应用基本架构的理解。每个应用都由三个核心部分组成：用户界面负责与用户交互，数据提供应用所需的信息，逻辑控制应用的行为和响应。
+**解析**：在创建新的 SAP Build Apps 项目时，基本配置包括项目标题和项目描述，这两个字段帮助识别和说明项目用途。
 
 #### 题目 2：项目管理位置
 **Question**: "Where can you see all your SAP Build projects?"
@@ -172,27 +172,7 @@ SAP Build Apps 是一个无代码/低代码应用开发平台，通过拖放方�
 
 **解析**：SAP Build Lobby 是管理所有 SAP Build 项目的中央位置，类似于项目的主控制台。
 
-#### 题目 3：项目创建配置
-**Question**: "Which two fields can you enter while creating a new project?"
-**Type**: Multiple Select (2 correct answers)
-
-**All Options**:
-1. Title
-2. Name of home page
-3. Description
-4. Permissions
-
-**Correct Answers**:
-- Title
-- Description
-
-**Incorrect Answers**:
-- Name of home page
-- Permissions
-
-**解析**：在创建新的 SAP Build Apps 项目时，基本配置包括项目标题和项目描述，这两个字段帮助识别和说明项目用途。
-
-#### 题目 4：平台核心能力
+#### 题目 3：平台核心能力
 **Question**: "What capabilities does SAP Build Apps provides to make it easy to build apps?"
 **Type**: Multiple Select (3 correct answers)
 
@@ -211,6 +191,26 @@ SAP Build Apps 是一个无代码/低代码应用开发平台，通过拖放方�
 - Deploying your application to Microsoft Azure
 
 **解析**：这道题目总结了 SAP Build Apps 的三大核心能力，分别对应应用的三个组成要素：UI构建、数据集成和逻辑创建。注意 SAP Build Apps 主要部署到 SAP BTP，而不是 Microsoft Azure。
+
+#### 题目 4：应用组成要素
+**Question**: "What are the three parts of a typical application?"
+**Type**: Multiple Select (3 correct answers)
+
+**All Options**:
+1. Build configuration
+2. User interface
+3. Logic
+4. Data
+
+**Correct Answers**:
+- User interface
+- Logic
+- Data
+
+**Incorrect Answer**:
+- Build configuration
+
+**解析**：这道题目考查对应用基本架构的理解。每个应用都由三个核心部分组成：用户界面负责与用户交互，数据提供应用所需的信息，逻辑控制应用的行为和响应。
 
 ### Quiz 通过标准
 - **及格要求**：至少答对 3 道题目才能通过此单元

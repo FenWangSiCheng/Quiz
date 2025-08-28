@@ -236,25 +236,23 @@ Unit 4 专注于 SAP Build Apps 中的逻辑基础和函数系统，深入介绍
 
 ### Quiz 题目与答案解析
 
-#### 题目 1：逻辑画布类型
-**Question**: "What are the types of Logic Canvas available in SAP Build Apps?"
-**Type**: Multiple Select (3 correct answers)
+#### 题目 1：逻辑运算
+**Question**: "Which logical operation is 'true' if two arguments are 'false'?"
+**Type**: Single Select (1 correct answer)
 
 **All Options**:
-1. Page Logic Canvas
-2. Global Logic Canvas
-3. Component Logic Canvas
-4. Process Logic Canvas
+1. OR
+2. NOT
+3. AND
 
-**Correct Answers**:
-- Page Logic Canvas
-- Global Logic Canvas
-- Component Logic Canvas
+**Correct Answer**:
+- NOT
 
-**Incorrect Answer**:
-- Process Logic Canvas
+**Incorrect Answers**:
+- OR
+- AND
 
-**解析**：SAP Build Apps 提供三种类型的逻辑画布：页面逻辑画布用于页面级别逻辑、全局逻辑画布用于应用级别逻辑、组件逻辑画布用于组件级别逻辑。Process Logic Canvas 不是 SAP Build Apps 中的逻辑画布类型。
+**解析**：NOT 运算在两个参数都为 'false' 时返回 'true'。这是逻辑非运算符的基本特性，它将 false 值反转为 true。
 
 #### 题目 2：流程函数用途
 **Question**: "Flow functions are used to perform mathematical calculations."
@@ -270,52 +268,32 @@ Unit 4 专注于 SAP Build Apps 中的逻辑基础和函数系统，深入介绍
 **Incorrect Answer**:
 - True
 
-**解析**：这个说法是错误的。数学计算是在公式编辑器中使用公式函数执行的，而流程函数主要用于创建应用逻辑和工作流程，执行可视化排序的操作。
+**解析**：数学计算是在公式编辑器中使用公式函数执行的，而不是流程函数。流程函数主要用于创建应用逻辑和工作流程。
 
-#### 题目 3：逻辑运算
-**Question**: "Which logical operation returns 'true' when two arguments are 'false'?"
-**Type**: Single Select (1 correct answer)
-
-**All Options**:
-1. AND
-2. OR
-3. NOT
-4. XOR
-
-**Correct Answer**:
-- NOT
-
-**Incorrect Answers**:
-- AND
-- OR
-- XOR
-
-**解析**：NOT（逻辑非）运算符在参数为 false 时返回 true。当两个参数都是 false 时，对其中任何一个应用 NOT 运算都会返回 true，这是 NOT 运算符的基本逻辑特性。
-
-#### 题目 4：公式函数库规模
-**Question**: "How many pre-built formulas are available in the SAP Build Apps formula library?"
-**Type**: Single Select (1 correct answer)
+#### 题目 3：逻辑画布类型
+**Question**: "What are the different types of Logic Canvas in SAP Build Apps?"
+**Type**: Multiple Select (3 correct answers)
 
 **All Options**:
-1. More than 300
-2. More than 400
-3. More than 500
-4. More than 600
+1. Process Logic Canvas
+2. Page Logic Canvas
+3. Global Logic Canvas
+4. Component Logic Canvas
 
-**Correct Answer**:
-- More than 500
+**Correct Answers**:
+- Page Logic Canvas
+- Global Logic Canvas
+- Component Logic Canvas
 
-**Incorrect Answers**:
-- More than 300
-- More than 400
-- More than 600
+**Incorrect Answer**:
+- Process Logic Canvas
 
-**解析**：根据学习材料，SAP Build Apps 的公式函数使用包含"超过 500 个预构建公式的库"，这为开发者提供了丰富的预制函数选择。
+**解析**：SAP Build Apps 提供三种类型的逻辑画布：页面逻辑画布用于页面级别逻辑、全局逻辑画布用于应用级别逻辑、组件逻辑画布用于组件级别逻辑。
 
 ### Quiz 通过标准
-- **及格要求**：至少答对 3 道题目才能通过此单元
-- **题目总数**：4 道题目
-- **建议**：深入理解逻辑画布类型、流程函数与公式函数的区别、逻辑运算符和公式函数库的规模
+- **及格要求**：完成所有题目以通过此单元
+- **题目总数**：3 道题目（与官方平台一致）
+- **建议**：深入理解逻辑运算符、流程函数与公式函数的区别、以及三种逻辑画布类型的应用场景
 
 ## 6. 学习要点总结
 
@@ -326,7 +304,7 @@ Unit 4 专注于 SAP Build Apps 中的逻辑基础和函数系统，深入介绍
 5. **事件处理机制**：理解事件驱动的逻辑触发和响应处理机制
 6. **逻辑运算掌握**：熟练使用比较运算符、逻辑运算符和条件语句
 7. **设计模式应用**：应用最佳实践进行清晰、模块化的逻辑设计
-8. **函数库利用**：有效利用超过 500 个预构建公式的丰富函数库
+8. **Quiz重点掌握**：重点理解NOT逻辑运算、流程函数与公式函数的区别、以及三种逻辑画布类型
 
 ---
 

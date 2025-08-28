@@ -311,68 +311,28 @@ Unit 5 专注于 SAP Build Apps 中的数据资源系统，深入介绍数据连
 
 ### Quiz 题目与答案解析
 
-#### 题目 1：数据资源可用操作
-**Question**: "What actions can be enabled for data resources?"
-**Type**: Multiple Select (3 correct answers)
-
-**All Options**:
-1. Get Record
-2. Create Record
-3. Update Record
-4. Retrieve All Records
-
-**Correct Answers**:
-- Get Record
-- Create Record
-- Update Record
-
-**Incorrect Answer**:
-- Retrieve All Records
-
-**解析**：数据资源支持三种标准操作：获取记录、创建记录和更新记录。"Retrieve All Records"不是 SAP Build Apps 中数据资源的标准可用操作。
-
-#### 题目 2：原生数据资源类型
-**Question**: "Which of the following is NOT considered a native data resource type in SAP Build Apps?"
+#### 题目 1：数据资源定义目的
+**Question**: "Why would you need to define a data resource?"
 **Type**: Single Select (1 correct answer)
 
 **All Options**:
-1. OData
-2. REST
-3. On-device storage
-4. SQL
+1. To define valid values for a variable
+2. To retrieve data from a back-end system
+3. To define the look and feel of the user interface
+4. To define the logic for app and user events
 
 **Correct Answer**:
-- SQL
+- To retrieve data from a back-end system
 
 **Incorrect Answers**:
-- OData
-- REST
-- On-device storage
+- To define valid values for a variable
+- To define the look and feel of the user interface
+- To define the logic for app and user events
 
-**解析**：SQL 不是 SAP Build Apps 中的原生数据资源类型。平台原生支持的数据资源类型包括 OData（企业数据协议）、REST（灵活 API 连接）和设备存储（本地数据存储）。
+**解析**：数据资源的主要目的是从后端系统检索数据，这是数据资源连接的核心功能。
 
-#### 题目 3：设备存储优势
-**Question**: "What is a key advantage of on-device storage?"
-**Type**: Single Select (1 correct answer)
-
-**All Options**:
-1. Requires internet connectivity
-2. Available offline
-3. Shares data across users
-4. Requires backend system calls
-
-**Correct Answer**:
-- Available offline
-
-**Incorrect Answers**:
-- Requires internet connectivity
-- Shares data across users
-- Requires backend system calls
-
-**解析**：设备存储的关键优势是离线可用性，无需互联网连接即可访问数据。它专门存储用户特定数据，不需要后端系统调用。
-
-#### 题目 4：市场数据资源共享范围
-**Question**: "Marketplace data resources can be reused across projects."
+#### 题目 2：市场数据资源用途
+**Question**: "The available data section in the Marketplace of SAP Build Apps is only used to test functions of the app."
 **Type**: True/False (1 correct answer)
 
 **All Options**:
@@ -380,27 +340,87 @@ Unit 5 专注于 SAP Build Apps 中的数据资源系统，深入介绍数据连
 2. False
 
 **Correct Answer**:
-- True
-
-**Incorrect Answer**:
 - False
 
-**解析**：这个说法是正确的。市场数据资源是预定义的可重用资源，可以快速安装并在项目间共享，这是市场数据资源系统的核心价值之一。
+**Incorrect Answer**:
+- True
+
+**解析**：市场中的可用数据部分不仅仅用于测试应用功能，它还提供可重用的数据资源，可以在实际项目中使用。
+
+#### 题目 3：数据资源操作限制
+**Question**: "When setting up a data resource, you can define and enable its actions. Which one of the following actions you cannot enable?"
+**Type**: Single Select (1 correct answer)
+
+**All Options**:
+1. Retrieve All Records
+2. Get Record
+3. Create Record
+4. Update Record
+
+**Correct Answer**:
+- Retrieve All Records
+
+**Incorrect Answers**:
+- Get Record
+- Create Record
+- Update Record
+
+**解析**："Retrieve All Records" 不是可以启用的操作。可用的标准操作包括获取记录、创建记录和更新记录。
+
+#### 题目 4：数据资源类型
+**Question**: "Which of the following is not a type of data resource?"
+**Type**: Single Select (1 correct answer)
+
+**All Options**:
+1. OData
+2. REST
+3. SQL
+4. On-device
+
+**Correct Answer**:
+- SQL
+
+**Incorrect Answers**:
+- OData
+- REST
+- On-device
+
+**解析**：SQL 不是 SAP Build Apps 中的数据资源类型。支持的类型包括 OData、REST 和设备存储（On-device）。
+
+#### 题目 5：设备存储优势
+**Question**: "What is the benefit of using on-device storage versus an OData or REST data resource?"
+**Type**: Single Select (1 correct answer)
+
+**All Options**:
+1. It has more data types
+2. It is available offline without backend calls
+3. It can hold more data
+4. It can be accessed by the UI
+
+**Correct Answer**:
+- It is available offline without backend calls
+
+**Incorrect Answers**:
+- It has more data types
+- It can hold more data
+- It can be accessed by the UI
+
+**解析**：设备存储相比 OData 或 REST 数据资源的主要优势是离线可用性，无需后端调用即可访问数据。
 
 ### Quiz 通过标准
-- **及格要求**：至少答对 3 道题目才能通过此单元
-- **题目总数**：4 道题目
-- **建议**：深入理解数据资源类型、操作配置、设备存储特性和市场资源共享机制
+- **及格要求**：完成所有题目以通过此单元
+- **题目总数**：5 道题目（与官方平台一致）
+- **建议**：理解数据资源的定义目的、类型差异、操作限制以及设备存储的离线优势
 
 ## 8. 学习要点总结
 
-1. **掌握数据资源基础**：理解数据资源作为应用生命线的核心地位和四种主要类型
-2. **OData 集成技能**：熟练掌握 OData 协议连接、实体结构和元数据处理
-3. **REST 资源创建**：学会 REST API 连接配置、HTTP 方法和端点配置
-4. **设备存储应用**：理解本地存储的离线优势和用户特定数据管理
-5. **市场资源利用**：掌握市场数据资源的使用、共享和生态价值
-6. **连接实施能力**：掌握数据资源连接建立、操作配置和最佳实践
-7. **类型选择策略**：根据应用需求选择合适的数据资源类型和配置
+1. **掌握数据资源基础**：理解数据资源的定义目的和从后端系统检索数据的核心功能
+2. **数据资源类型掌握**：熟练区分 OData、REST 和设备存储三种主要数据资源类型
+3. **操作配置理解**：掌握数据资源的标准操作（Get Record、Create Record、Update Record）和限制
+4. **设备存储应用**：理解本地存储的离线优势和无需后端调用的特性
+5. **市场资源理解**：掌握市场数据资源的实际用途，不仅限于测试功能
+6. **Quiz 重点掌握**：重点理解数据资源定义目的、类型限制、操作约束和离线存储优势
+7. **实际应用指导**：根据应用需求选择合适的数据资源类型和配置策略
 8. **离线功能设计**：利用设备存储实现离线功能和个性化用户体验
 
 ---

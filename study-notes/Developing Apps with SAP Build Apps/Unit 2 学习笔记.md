@@ -229,25 +229,21 @@ UI 定义以下内容：
 
 ### Quiz 题目与答案解析
 
-#### 题目 1：组件可拨打能力
-**Question**: "Which components can be made dialable?"
-**Type**: Multiple Select (3 correct answers)
+#### 题目 1：市场主要用途
+**Question**: "The Marketplace is primarily for View Components."
+**Type**: True/False (1 correct answer)
 
 **All Options**:
-1. Button components
-2. Card components
-3. Only button and list components
-4. Title components
+1. True
+2. False
 
-**Correct Answers**:
-- Button components
-- Card components
-- Title components
+**Correct Answer**:
+- False
 
 **Incorrect Answer**:
-- Only button and list components
+- True
 
-**解析**：在 SAP Build Apps 中，所有组件都可以被设置为可拨打的，不仅限于按钮和列表组件，这体现了平台的灵活性。
+**解析**：市场不仅仅提供视图组件，还为逻辑元素和数据提供大量选择，是一个全面的组件生态系统。
 
 #### 题目 2：文本组件绑定类型
 **Question**: "Which binding types are available by default for a text component?"
@@ -271,23 +267,7 @@ UI 定义以下内容：
 
 **解析**：文本组件默认支持静态值、组件属性和公式这三种绑定类型，这些是最基础和常用的绑定方式。
 
-#### 题目 3：市场主要用途
-**Question**: "The Marketplace is primarily for View Components."
-**Type**: True/False (1 correct answer)
-
-**All Options**:
-1. True
-2. False
-
-**Correct Answer**:
-- False
-
-**Incorrect Answer**:
-- True
-
-**解析**：市场不仅仅提供视图组件，还为逻辑元素和数据提供大量选择，是一个全面的组件生态系统。
-
-#### 题目 4：按钮组件样式类
+#### 题目 3：按钮组件样式类
 **Question**: "Which of these predefined style classes of the button component exist in SAP Build Apps?"
 **Type**: Multiple Select (3 correct answers)
 
@@ -306,6 +286,26 @@ UI 定义以下内容：
 - Access Button
 
 **解析**：SAP Build Apps 中存在 Primary、Secondary 和 Danger 按钮样式类，这些是标准的设计系统样式分类。
+
+#### 题目 4：组件可拨打能力
+**Question**: "Which components can be made dialable?"
+**Type**: Multiple Select (3 correct answers)
+
+**All Options**:
+1. Button components
+2. Card components
+3. Only button and list components
+4. Title components
+
+**Correct Answers**:
+- Button components
+- Card components
+- Title components
+
+**Incorrect Answer**:
+- Only button and list components
+
+**解析**：在 SAP Build Apps 中，所有组件都可以被设置为可拨打的，不仅限于按钮和列表组件，这体现了平台的灵活性。
 
 ### Quiz 通过标准
 - **及格要求**：至少答对 3 道题目才能通过此单元
