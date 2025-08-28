@@ -110,7 +110,7 @@
             <div class="quiz-categories">
               <div class="category-item">
                 <span class="category-name">SAP Build Process Automation Quiz</span>
-                <span class="category-count">21道题</span>
+                <span class="category-count">31道题</span>
               </div>
               <div class="category-item">
                 <span class="category-name">SAP Build Work Zone Quiz</span>
@@ -129,7 +129,7 @@
           
           <div class="info-card">
             <h4>ℹ️ 说明</h4>
-            <p>共{{ questions.length }}道题目，涵盖SAP Build套件三大核心产品及治理最佳实践的相关知识点，包含官方认证考试题目，支持进度保存和断点续答。</p>
+            <p>共{{ questions.length }}道题目，涵盖SAP Build套件三大核心产品及治理最佳实践的相关知识点，包含官方认证考试题目和学习笔记Quiz，支持进度保存和断点续答。</p>
           </div>
         </div>
       </aside>
@@ -142,7 +142,7 @@ import { computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useQuizStore } from '@/stores/quiz'
 import { questions } from '@/data/questions'
-import { List, Refresh, Clock } from '@element-plus/icons-vue'
+// Removed unused icon imports
 import { ElMessage } from 'element-plus'
 
 const router = useRouter()

@@ -86,7 +86,7 @@ export const getQuestionBankStats = () => {
   }
 
   // 按题库统计
-  Object.entries(questionBankMetadata).forEach(([key, meta]) => {
+  Object.entries(questionBankMetadata).forEach(([, meta]) => {
     stats.byBank[meta.name] = meta.count
   })
 

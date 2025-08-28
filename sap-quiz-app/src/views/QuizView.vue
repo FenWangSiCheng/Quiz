@@ -34,7 +34,7 @@
       <div v-if="currentQuestion" class="question-section">
         <div class="question-header">
           <el-tag 
-            :type="typeTag(currentQuestion.type)" 
+            type="info" 
             size="small"
           >
             {{ typeText(currentQuestion.type) }}
@@ -208,7 +208,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch, onMounted } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useQuizStore } from '@/stores/quiz'
 import { storeToRefs } from 'pinia'
@@ -281,21 +281,7 @@ const getOptionClass = (index: number) => {
   return ''
 }
 
-// 难度标签
-const difficultyTag = (difficulty: string) => {
-  const tags = { easy: 'success', medium: 'warning', hard: 'danger' }
-  return tags[difficulty as keyof typeof tags] || 'info'
-}
-
-const difficultyText = (difficulty: string) => {
-  const texts = { easy: '简单', medium: '中等', hard: '困难' }
-  return texts[difficulty as keyof typeof texts] || difficulty
-}
-
-// 题型标签
-const typeTag = (type: string) => {
-  return 'info'
-}
+// Removed unused utility functions for difficulty and type tags
 
 const typeText = (type: string) => {
   const texts = {
