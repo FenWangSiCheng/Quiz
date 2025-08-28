@@ -16,7 +16,7 @@ import {
   buildAppsQuestions,
   certificationQuestions,
   questionBankMetadata
-} from './questionBanks'
+} from './questionBanks/index'
 
 // 合并所有题库
 export const questions: Question[] = [

@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import { questions, shuffleArray, type Question } from '@/data/questions'
+import { getQuestionsByBankIds } from '@/data/questionBankManager'
 
 // 用户答案接口
 export interface UserAnswer {
@@ -18,12 +19,15 @@ export interface QuizProgress {
   answers: UserAnswer[]
   completed: boolean
   startTime: string
+  selectedBankIds: string[]  // 新增：所选题库ID列表
+  quizMode: 'all' | 'selected' // 新增：测试模式
 }
 
 export const useQuizStore = defineStore('quiz', () => {
   // 状态
   const currentProgress = ref<QuizProgress | null>(null)
   const showAnswer = ref(false)
+  const selectedQuestions = ref<Question[]>([]) // 新增：当前选中的题目列表
   
   // Getters
   const currentQuestion = computed((): Question | null => {
@@ -31,7 +35,9 @@ export const useQuizStore = defineStore('quiz', () => {
       return null
     }
     const questionIndex = currentProgress.value.questionOrder[currentProgress.value.currentQuestionIndex]
-    return questions[questionIndex] || null
+    // 根据测试模式选择题目源
+    const questionSource = currentProgress.value.quizMode === 'selected' ? selectedQuestions.value : questions
+    return questionSource[questionIndex] || null
   })
   
   const totalQuestions = computed(() => {
@@ -84,9 +90,48 @@ export const useQuizStore = defineStore('quiz', () => {
       currentQuestionIndex: 0,
       answers: [],
       completed: false,
-      startTime: new Date().toISOString()
+      startTime: new Date().toISOString(),
+      selectedBankIds: [], // 全部题库模式
+      quizMode: 'all'
     }
     
+    selectedQuestions.value = questions // 使用全部题目
+    showAnswer.value = false
+    saveProgress()
+  }
+  
+  // 新增：支持选择题库的测试开始函数
+  const startQuizWithBanks = (bankIds: string[], randomOrder: boolean = false) => {
+    // 1. 根据 bankIds 获取对应的题目列表
+    const bankQuestions = getQuestionsByBankIds(bankIds)
+    
+    if (bankQuestions.length === 0) {
+      console.warn('没有找到任何题目，请检查题库ID')
+      return
+    }
+    
+    // 2. 创建题目索引数组
+    const questionIndices = Array.from({ length: bankQuestions.length }, (_, i) => i)
+    
+    // 3. 根据 randomOrder 决定是否打乱顺序
+    const questionOrder = randomOrder ? shuffleArray(questionIndices) : questionIndices
+    
+    // 4. 设置 currentProgress 包含选中的题库信息
+    currentProgress.value = {
+      isRandomOrder: randomOrder,
+      questionOrder,
+      currentQuestionIndex: 0,
+      answers: [],
+      completed: false,
+      startTime: new Date().toISOString(),
+      selectedBankIds: [...bankIds], // 保存选中的题库ID
+      quizMode: 'selected'
+    }
+    
+    // 5. 更新 selectedQuestions
+    selectedQuestions.value = bankQuestions
+    
+    // 6. 保存进度
     showAnswer.value = false
     saveProgress()
   }
@@ -168,6 +213,14 @@ export const useQuizStore = defineStore('quiz', () => {
       // 验证数据完整性
       if (progress.questionOrder && progress.questionOrder.length > 0) {
         currentProgress.value = progress
+        
+        // 根据测试模式恢复题目数据
+        if (progress.quizMode === 'selected' && progress.selectedBankIds) {
+          selectedQuestions.value = getQuestionsByBankIds(progress.selectedBankIds)
+        } else {
+          selectedQuestions.value = questions
+        }
+        
         showAnswer.value = hasAnswered.value
         return true
       }
@@ -188,6 +241,7 @@ export const useQuizStore = defineStore('quiz', () => {
     // 状态
     currentProgress,
     showAnswer,
+    selectedQuestions,
     
     // Getters
     currentQuestion,
@@ -200,6 +254,7 @@ export const useQuizStore = defineStore('quiz', () => {
     
     // Actions
     startQuiz,
+    startQuizWithBanks,
     answerQuestion,
     nextQuestion,
     previousQuestion,

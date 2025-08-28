@@ -26,18 +26,11 @@
         <h2>开始练习</h2>
         
         <div class="quiz-options">
-          <div class="option-card" @click="startQuiz(false)">
-            <div class="option-icon">📝</div>
-            <h3>按顺序答题</h3>
-            <p>按照题目原始顺序进行练习</p>
-            <el-button type="primary" size="large">开始练习</el-button>
-          </div>
-
-          <div class="option-card" @click="startQuiz(true)">
-            <div class="option-icon">🎲</div>
-            <h3>随机顺序</h3>
-            <p>随机打乱题目顺序，增加练习难度</p>
-            <el-button type="success" size="large">开始练习</el-button>
+          <div class="option-card" @click="showBankSelector">
+            <div class="option-icon">🎯</div>
+            <h3>模拟测试</h3>
+            <p>选择一个或多个题库进行专项练习</p>
+            <el-button type="warning" size="large">选择题库</el-button>
           </div>
         </div>
       </section>
@@ -93,8 +86,8 @@
               <span class="stat-preview-label">道题目</span>
             </div>
             <div class="stat-preview-item">
-              <span class="stat-preview-number">2</span>
-              <span class="stat-preview-label">种模式</span>
+              <span class="stat-preview-number">{{ questionBanks.length }}</span>
+              <span class="stat-preview-label">个题库</span>
             </div>
           </div>
         </div>
@@ -108,21 +101,16 @@
           <div class="info-card">
             <h4>📋 题库信息</h4>
             <div class="quiz-categories">
-              <div class="category-item">
-                <span class="category-name">SAP Build Process Automation Quiz</span>
-                <span class="category-count">31道题</span>
-              </div>
-              <div class="category-item">
-                <span class="category-name">SAP Build Work Zone Quiz</span>
-                <span class="category-count">10道题</span>
-              </div>
-              <div class="category-item">
-                <span class="category-name">Developing Apps with SAP Build Apps Quiz</span>
-                <span class="category-count">20道题</span>
-              </div>
-              <div class="category-item">
-                <span class="category-name">C_LCNC_2406 认证题库</span>
-                <span class="category-count">60道题</span>
+              <div 
+                v-for="bank in questionBanks" 
+                :key="bank.id"
+                class="category-item"
+              >
+                <span class="category-name">
+                  <span class="bank-icon" :style="{ color: bank.color }">{{ bank.icon }}</span>
+                  {{ bank.name }}
+                </span>
+                <span class="category-count">{{ bank.count }}题</span>
               </div>
             </div>
           </div>
@@ -134,24 +122,44 @@
         </div>
       </aside>
     </main>
+
+    <!-- 题库选择对话框 -->
+    <el-dialog
+      v-model="bankSelectorVisible"
+      title="选择题库"
+      :width="800"
+      :close-on-click-modal="false"
+      center
+    >
+      <QuestionBankSelector
+        :visible="bankSelectorVisible"
+        @confirm="handleBankSelection"
+        @cancel="bankSelectorVisible = false"
+      />
+    </el-dialog>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useQuizStore } from '@/stores/quiz'
 import { questions } from '@/data/questions'
-// Removed unused icon imports
-import { ElMessage } from 'element-plus'
+import { getAllQuestionBanks } from '@/data/questionBankManager'
+import QuestionBankSelector from '@/components/QuestionBankSelector.vue'
+import { ElMessage, ElMessageBox } from 'element-plus'
 
 const router = useRouter()
 const quizStore = useQuizStore()
+
+// 响应式数据
+const bankSelectorVisible = ref(false)
 
 // 计算属性
 const hasProgress = computed(() => !!quizStore.currentProgress)
 const currentProgress = computed(() => quizStore.currentProgress)
 const statistics = computed(() => quizStore.statistics)
+const questionBanks = computed(() => getAllQuestionBanks())
 
 const progressPercentage = computed(() => {
   if (!currentProgress.value) return 0
@@ -161,11 +169,6 @@ const progressPercentage = computed(() => {
 })
 
 // 方法
-const startQuiz = (randomOrder: boolean) => {
-  quizStore.startQuiz(randomOrder)
-  ElMessage.success(randomOrder ? '开始随机顺序练习' : '开始按顺序练习')
-  router.push('/quiz')
-}
 
 const continueQuiz = () => {
   ElMessage.info('继续上次练习')
@@ -175,6 +178,39 @@ const continueQuiz = () => {
 const resetProgress = () => {
   quizStore.resetQuiz()
   ElMessage.success('已清除练习进度')
+}
+
+// 新增方法
+const showBankSelector = () => {
+  bankSelectorVisible.value = true
+}
+
+const handleBankSelection = (bankIds: string[]) => {
+  bankSelectorVisible.value = false
+  
+  // 显示题库选择模式对话框
+  ElMessageBox.confirm(
+    `已选择 ${bankIds.length} 个题库，请选择答题模式：`,
+    '开始模拟测试',
+    {
+      distinguishCancelAndClose: true,
+      confirmButtonText: '随机顺序',
+      cancelButtonText: '按顺序',
+      type: 'info'
+    }
+  ).then(() => {
+    // 随机顺序
+    quizStore.startQuizWithBanks(bankIds, true)
+    ElMessage.success('开始随机顺序模拟测试')
+    router.push('/quiz')
+  }).catch((action) => {
+    if (action === 'cancel') {
+      // 按顺序
+      quizStore.startQuizWithBanks(bankIds, false)
+      ElMessage.success('开始按顺序模拟测试')
+      router.push('/quiz')
+    }
+  })
 }
 
 // 组件挂载
@@ -475,6 +511,13 @@ onMounted(() => {
   color: #374151;
   font-size: 0.875rem;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bank-icon {
+  font-size: 1rem;
 }
 
 .category-count {

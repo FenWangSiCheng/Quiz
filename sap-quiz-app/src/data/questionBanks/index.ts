@@ -10,21 +10,21 @@ export { certificationQuestions } from './certification'
 export const questionBankMetadata = {
   processAutomation: {
     name: 'SAP Build Process Automation',
-    description: 'SAP流程自动化相关题目 - 来源于官方学习笔记Quiz',
+    description: '官方学习网站的 Quiz',
     count: 31,
     difficulty: 'medium',
     hasExplanations: true
   },
   workZone: {
     name: 'Designing SAP Build Work Zone', 
-    description: 'SAP工作区设计相关题目',
+    description: '官方学习网站的 Quiz',
     count: 10,
     difficulty: 'medium',
     hasExplanations: true
   },
   buildApps: {
     name: 'Developing Apps with SAP Build Apps',
-    description: 'SAP Build Apps应用开发相关题目',
+    description: '官方学习网站的 Quiz',
     count: 20,
     difficulty: 'medium',
     hasExplanations: true
