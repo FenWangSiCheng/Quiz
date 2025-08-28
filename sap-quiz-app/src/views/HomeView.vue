@@ -106,13 +106,30 @@
         
         <div class="info-cards">
           <div class="info-card">
-            <h4>📋 考试信息</h4>
-            <p>SAP Certified Associate - Low-Code/No-Code Developer - SAP Build (C_LCNC_2406)</p>
+            <h4>📋 题库信息</h4>
+            <div class="quiz-categories">
+              <div class="category-item">
+                <span class="category-name">SAP Build Process Automation Quiz</span>
+                <span class="category-count">21道题</span>
+              </div>
+              <div class="category-item">
+                <span class="category-name">SAP Build Work Zone Quiz</span>
+                <span class="category-count">10道题</span>
+              </div>
+              <div class="category-item">
+                <span class="category-name">Developing Apps with SAP Build Apps Quiz</span>
+                <span class="category-count">20道题</span>
+              </div>
+              <div class="category-item">
+                <span class="category-name">C_LCNC_2406 认证题库</span>
+                <span class="category-count">60道题</span>
+              </div>
+            </div>
           </div>
           
           <div class="info-card">
             <h4>ℹ️ 说明</h4>
-            <p>共{{ questions.length }}道题目，涵盖SAP Build Process Automation和SAP Build Work Zone相关知识点，支持进度保存和断点续答。</p>
+            <p>共{{ questions.length }}道题目，涵盖SAP Build套件三大核心产品及治理最佳实践的相关知识点，包含官方认证考试题目，支持进度保存和断点续答。</p>
           </div>
         </div>
       </aside>
@@ -436,6 +453,37 @@ onMounted(() => {
   line-height: 1.6;
   margin: 0;
   font-size: 0.875rem;
+}
+
+.quiz-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.category-name {
+  color: #374151;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.category-count {
+  color: #3b82f6;
+  font-weight: 600;
+  font-size: 0.875rem;
+  background: #dbeafe;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
 }
 
 .type-list {
