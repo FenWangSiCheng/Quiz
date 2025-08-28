@@ -6,21 +6,23 @@ This repository contains learning materials for SAP technologies and a Vue.js-ba
 
 **[Access the SAP Quiz Application](https://stalwart-marigold-edcacd.netlify.app/)**
 
-The application is deployed on Netlify and includes 31+ quiz questions covering SAP Build Process Automation and SAP Build Work Zone topics.
+The application is deployed on Netlify and includes comprehensive quiz questions covering multiple SAP Build topics.
 
 ## 📚 Structure
 
 ### Study Notes
-- **Study Notes/**: Organized learning materials by course
-  - **SAP Build Process Automation/**: 6 units of comprehensive notes
+- **study-notes/**: Organized learning materials by course
+  - **SAP Build Process Automation/**: Complete learning units with detailed notes
   - **Designing SAP Build Work Zone/**: Work zone design concepts and practices
+  - **Developing Apps with SAP Build Apps/**: App development fundamentals and best practices
+  - **SAP-C_LCNC_2406/**: SAP certification study materials
 
 ### Quiz Application
 - **sap-quiz-app/**: Vue.js application for SAP knowledge testing
-  - Interactive quiz interface
-  - Multiple choice questions
-  - Score tracking and results
-  - Responsive design
+  - Interactive quiz interface with multiple question banks
+  - Support for True/False, Single Choice, and Multiple Choice questions
+  - Score tracking and results with session persistence
+  - Responsive design optimized for all devices
 
 ### Documentation
 - **SAP Quiz Application PRD.md**: Product Requirements Document
@@ -57,20 +59,25 @@ npm run build
 ## 📖 Learning Materials
 
 The study notes cover various SAP technologies including:
-- SAP Build Process Automation fundamentals
-- Workflow design and implementation
-- SAP Build Work Zone configuration
+- SAP Build Process Automation fundamentals and workflow design
+- SAP Build Work Zone configuration and design patterns
+- SAP Build Apps development methodologies
+- SAP certification preparation materials
 - Best practices and real-world applications
 
 ## 🎯 Quiz Application Features
 
-- **31+ Quiz Questions**: Comprehensive SAP knowledge testing covering Process Automation and Work Zone
-- **Multiple Question Types**: True/False, Single Choice, and Multiple Choice questions
-- **Progress Tracking**: Monitor your learning progress with session persistence
-- **Instant Feedback**: Get immediate results and detailed explanations
-- **Responsive Design**: Works on desktop and mobile devices
-- **Score Analytics**: Track your performance over time
-- **Two Quiz Modes**: Sequential and randomized question ordering
+- **Multiple Question Banks**: Comprehensive SAP knowledge testing across different Build components
+  - SAP Build Process Automation questions
+  - SAP Build Work Zone design questions
+  - SAP Build Apps development questions
+  - SAP certification practice questions
+- **Flexible Question Types**: True/False, Single Choice, and Multiple Choice questions
+- **Progress Tracking**: Monitor your learning progress with automatic session persistence
+- **Instant Feedback**: Get immediate results and detailed explanations where available
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **Score Analytics**: Track your performance over time with detailed statistics
+- **Flexible Quiz Modes**: Sequential and randomized question ordering options
 
 ## 🛠 Technologies Used
 
