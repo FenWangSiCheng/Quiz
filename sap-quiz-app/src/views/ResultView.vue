@@ -1,6 +1,33 @@
 <template>
-  <div class="result-container">
-    <el-card class="result-card">
+  <div class="result-layout">
+    <!-- 顶部导航栏 -->
+    <header class="result-header">
+      <div class="header-content">
+        <div class="header-left">
+          <el-button @click="goHome" text>
+            <el-icon><House /></el-icon>
+            返回首页
+          </el-button>
+          <h1 class="result-title">测验结果</h1>
+        </div>
+        
+        <div class="header-right">
+          <div class="quiz-mode-info">
+            <el-tag v-if="quizMode === 'selected'" type="warning" size="small">
+              模拟测试
+            </el-tag>
+            <el-tag v-else type="info" size="small">
+              全题库测试
+            </el-tag>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 全宽度主内容区域 -->
+    <main class="result-main">
+      <div class="result-container">
+        <el-card class="result-card">
       <!-- 完成状态 -->
       <div class="completion-section">
         <el-result 
@@ -101,11 +128,8 @@
             :name="item.question.id.toString()"
           >
             <div class="wrong-question-content">
-              <!-- 题型和难度标签 -->
+              <!-- 题型标签 -->
               <div class="question-tags">
-                <el-tag :type="difficultyTag(item.question.difficulty)" size="small">
-                  {{ difficultyText(item.question.difficulty) }}
-                </el-tag>
                 <el-tag type="info" size="small">
                   {{ typeText(item.question.type) }}
                 </el-tag>
@@ -154,31 +178,16 @@
       <el-divider />
       <div class="action-section">
         <div class="action-buttons">
-          <el-button size="large" @click="goHome">
+          <el-button type="primary" size="large" @click="goHome">
             <el-icon><House /></el-icon>
             返回首页
           </el-button>
-          
-          <el-button type="primary" size="large" @click="retryWrongQuestions" :disabled="wrongQuestions.length === 0">
-            <el-icon><Refresh /></el-icon>
-            重做错题
-          </el-button>
-          
-          <el-button type="success" size="large" @click="startNewQuiz">
-            <el-icon><VideoPlay /></el-icon>
-            重新测验
-          </el-button>
         </div>
 
-        <!-- 分享成绩 -->
-        <div class="share-section">
-          <el-button size="small" @click="shareResult">
-            <el-icon><Share /></el-icon>
-            分享成绩
-          </el-button>
-        </div>
       </div>
     </el-card>
+      </div>
+    </main>
   </div>
 </template>
 
@@ -188,8 +197,7 @@ import { useRouter } from 'vue-router'
 import { useQuizStore } from '@/stores/quiz'
 import { questions } from '@/data/questions'
 import { 
-  Document, Edit, CircleCheck, CircleClose, House, 
-  Refresh, VideoPlay, Share 
+  Document, Edit, CircleCheck, CircleClose, House
 } from '@element-plus/icons-vue'
 import { ElMessage } from 'element-plus'
 import type { Question } from '@/data/questions'
@@ -203,6 +211,8 @@ const activeWrongQuestions = ref<string[]>([])
 
 // 计算属性
 const statistics = computed(() => quizStore.statistics)
+
+const quizMode = computed(() => quizStore.currentProgress?.quizMode || 'all')
 
 const resultIcon = computed(() => {
   const accuracy = statistics.value?.accuracy || 0
@@ -246,15 +256,6 @@ const getScoreColor = (accuracy: number) => {
   return '#f56c6c'
 }
 
-const difficultyTag = (difficulty: string) => {
-  const tags = { easy: 'success', medium: 'warning', hard: 'danger' }
-  return tags[difficulty as keyof typeof tags] || 'info'
-}
-
-const difficultyText = (difficulty: string) => {
-  const texts = { easy: '简单', medium: '中等', hard: '困难' }
-  return texts[difficulty as keyof typeof texts] || difficulty
-}
 
 const typeText = (type: string) => {
   const texts = {
@@ -269,39 +270,8 @@ const goHome = () => {
   router.push('/')
 }
 
-const retryWrongQuestions = () => {
-  // 这里可以实现只重做错题的功能
-  ElMessage.info('重做错题功能开发中...')
-}
 
-const startNewQuiz = () => {
-  quizStore.resetQuiz()
-  router.push('/')
-}
 
-const shareResult = async () => {
-  const stats = statistics.value
-  if (!stats) return
-  
-  const shareText = `我在SAP Learning Quiz中获得了${Math.round(stats.accuracy * 100)}%的正确率！完成了${stats.totalAnswered}/${stats.totalQuestions}题，答对${stats.correctAnswers}题。`
-  
-  try {
-    if (navigator.share) {
-      await navigator.share({
-        title: 'SAP Learning Quiz 成绩',
-        text: shareText,
-        url: window.location.origin
-      })
-    } else {
-      // 降级到复制到剪贴板
-      await navigator.clipboard.writeText(shareText)
-      ElMessage.success('成绩已复制到剪贴板')
-    }
-  } catch (error) {
-    console.error('分享失败:', error)
-    ElMessage.error('分享失败')
-  }
-}
 
 // 组件挂载
 onMounted(() => {
@@ -319,12 +289,75 @@ onMounted(() => {
 </script>
 
 <style scoped>
+/* 全屏布局 - 与其他界面保持一致 */
+.result-layout {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f8fafc;
+  margin: 0;
+  padding: 0;
+}
+
+/* 全宽度顶部导航栏 */
+.result-header {
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.result-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.quiz-mode-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* 全宽度主内容区域 */
+.result-main {
+  flex: 1;
+  width: 100%;
+  padding: 2rem 0;
+  background: #f8fafc;
+}
+
 .result-container {
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 20px;
-  min-height: 100vh;
+  padding: 0 5%;
 }
 
 .result-card {
@@ -442,26 +475,49 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin-bottom: 20px;
   flex-wrap: wrap;
 }
 
-.share-section {
-  padding-top: 15px;
-  border-top: 1px solid var(--el-border-color-lighter);
+/* 响应式设计 */
+@media (max-width: 1400px) {
+  .result-container {
+    padding: 0 4%;
+  }
 }
 
-/* 响应式设计 */
+@media (max-width: 1200px) {
+  .result-main {
+    padding: 1.5rem 0;
+  }
+  
+  .result-container {
+    padding: 0 3%;
+  }
+}
+
 @media (max-width: 1024px) {
   .result-container {
-    max-width: 100%;
-    padding: 15px;
+    padding: 0 3%;
+  }
+  
+  .result-main {
+    padding: 1.5rem 0;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .result-title {
+    font-size: 1.25rem;
   }
 }
 
 @media (max-width: 768px) {
   .result-container {
-    padding: 12px;
+    padding: 0 4%;
   }
   
   .completion-section {
@@ -491,11 +547,25 @@ onMounted(() => {
   .question-tags {
     gap: 6px;
   }
+  
+  .result-header {
+    padding: 1rem 0;
+  }
+  
+  .result-main {
+    padding: 1rem 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .result-container {
+    padding: 0 3%;
+  }
 }
 
 @media (max-width: 480px) {
   .result-container {
-    padding: 10px;
+    padding: 0 2%;
   }
   
   .stats-grid {
@@ -514,6 +584,22 @@ onMounted(() => {
   .answer-option {
     font-size: 13px;
     padding: 6px 10px;
+  }
+  
+  .result-header {
+    padding: 0.75rem 0;
+  }
+  
+  .result-main {
+    padding: 0.75rem 0;
+  }
+  
+  .header-left {
+    gap: 0.5rem;
+  }
+  
+  .result-title {
+    font-size: 1.125rem;
   }
 }
 </style>

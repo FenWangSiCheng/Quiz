@@ -32,9 +32,6 @@
           <p class="bank-description">{{ bank.description }}</p>
           <div class="bank-meta">
             <span class="bank-count">{{ bank.count }}题</span>
-            <span class="bank-difficulty" :class="`difficulty-${bank.difficulty}`">
-              {{ getDifficultyText(bank.difficulty) }}
-            </span>
           </div>
         </div>
       </div>
@@ -116,14 +113,6 @@ const selectNone = () => {
 }
 
 
-const getDifficultyText = (difficulty: QuestionBank['difficulty']) => {
-  const difficultyMap = {
-    beginner: '初级',
-    intermediate: '中级',
-    advanced: '高级'
-  }
-  return difficultyMap[difficulty]
-}
 
 const confirmSelection = () => {
   if (selectedBanks.value.size === 0) {
@@ -234,7 +223,7 @@ onMounted(() => {
 
 .bank-meta {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -245,29 +234,6 @@ onMounted(() => {
   background: #dbeafe;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
-}
-
-.bank-difficulty {
-  font-size: 0.75rem;
-  font-weight: 500;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  text-transform: uppercase;
-}
-
-.difficulty-beginner {
-  background: #dcfce7;
-  color: #16a34a;
-}
-
-.difficulty-intermediate {
-  background: #fef3c7;
-  color: #d97706;
-}
-
-.difficulty-advanced {
-  background: #fee2e2;
-  color: #dc2626;
 }
 
 .selection-summary {
