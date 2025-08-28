@@ -2,7 +2,7 @@
 
 This repository contains learning materials for SAP technologies and a Vue.js-based quiz application for testing SAP knowledge.
 
-## 🌐 Live Demo
+## 🌐 Access Online
 
 **[Access the SAP Quiz Application](https://stalwart-marigold-edcacd.netlify.app/)**
 

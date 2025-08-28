@@ -1,6 +1,15 @@
-# sap-quiz-app
+# SAP Learning Quiz Web Application
 
-This template should help get you started developing with Vue 3 in Vite.
+A comprehensive web application for testing SAP knowledge through interactive quizzes. Built with Vue.js 3, this platform helps users validate their understanding of SAP Build Process Automation and SAP Build Work Zone concepts.
+
+## Features
+
+- **Interactive Quiz System**: Multiple question types including true/false, single choice, and multiple choice
+- **Progress Tracking**: Automatic saving of quiz progress with localStorage persistence
+- **Randomized Questions**: Optional question shuffling for varied quiz experiences
+- **Detailed Explanations**: Comprehensive explanations for each answer to enhance learning
+- **Responsive Design**: Web-optimized interface that works across devices
+- **Real-time Scoring**: Instant feedback and score calculation
 
 ## Recommended IDE Setup
 
@@ -14,20 +23,25 @@ TypeScript cannot handle type information for `.vue` imports by default, so we r
 
 See [Vite Configuration Reference](https://vite.dev/config/).
 
-## Project Setup
+## Development Setup
 
+Install dependencies:
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Run Web Application in Development Mode
 
+Start the development server with hot-reload:
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+The web application will be available at `http://localhost:5173`
 
+### Build Web Application for Production
+
+Type-check, compile and minify for web deployment:
 ```sh
 npm run build
 ```
