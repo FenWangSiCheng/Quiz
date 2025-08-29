@@ -599,144 +599,139 @@
 
 ---
 
-## 练习题目 (Quiz Questions)
+## 练习题目 (Quiz Questions) - 官方版本
 
-### 官方学习测验题目
+### 测验标准 (Assessment Criteria)
+- **题目总数:** 10题
+- **及格要求:** 答对8题即可通过 (80%正确率)
+- **题型分布:** True/False题 + Multiple Choice题
+- **知识覆盖:** 信息架构的核心组件和管理功能
 
-#### Question 1: Site Menu Flexibility
+---
+
+#### Question 1: Workpages Content Limitation
+**English:** Workpages in SAP Build Work Zone can only display content from SAP applications.
+- **True**
+- **False**
+
+**中文解释:** SAP Build Work Zone中的工作页面只能显示来自SAP应用程序的内容。
+**正确答案:** False - 工作页面可以显示多种类型的内容，包括第三方应用程序、小部件和UI Integration Cards
+
+---
+
+#### Question 2: Site Menu Customization Purpose
+**English:** What is the purpose of customizing the Site Menu in SAP Build Work Zone?
+- A) To integrate third-party applications only
+- B) To provide a navigation framework that enhances user experience
+- C) To restrict user access to applications
+- D) To manage workspace templates
+
+**中文解释:** 在SAP Build Work Zone中定制站点菜单的目的是什么？
+**正确答案:** B - 提供增强用户体验的导航框架
+
+---
+
+#### Question 3: Third-party Application Integration
+**English:** SAP Build Work Zone allows for manual integration of third-party applications to enhance workspace functionality.
+- **True**
+- **False**
+
+**中文解释:** SAP Build Work Zone允许手动集成第三方应用程序以增强工作空间功能。
+**正确答案:** True - 支持通过手动集成方式添加第三方应用程序
+
+---
+
+#### Question 4: Application Enhancement Methods
+**English:** How can applications enhance the functionality of SAP Build Work Zone?
+- A) By providing additional navigation options in the Site Menu
+- B) Through customization of user settings and preferences
+- C) By enriching workspaces and workpages with specialized functionalities
+- D) By automating the creation of workspaces
+
+**中文解释:** 应用程序如何增强SAP Build Work Zone的功能？
+**正确答案:** C - 通过专门功能丰富工作空间和工作页面
+
+---
+
+#### Question 5: Header Bar Configuration Options
+**English:** What user settings can be configured from the SAP Build Work Zone header bar?
+- A) Only language and formatting preferences
+- B) Theme or display settings and language and formatting preferences
+- C) Workspace template management
+- D) Direct application integration settings
+
+**中文解释:** 从SAP Build Work Zone顶栏可以配置哪些用户设置？
+**正确答案:** B - 主题或显示设置以及语言和格式偏好
+
+---
+
+#### Question 6: Site Menu External Links
 **English:** The Site Menu in SAP Build Work Zone can be customized to include external links, improving access to non-SAP resources.
 - **True**
 - **False**
 
-**中文解释:** SAP Build Work Zone的站点菜单可以定制包含外部链接，提升对非SAP资源的访问能力。
-**答案:** True - 站点菜单支持Custom类型，可以链接外部URL和资源
+**中文解释:** SAP Build Work Zone的站点菜单可以定制包含外部链接，提升对非SAP资源的访问。
+**正确答案:** True - 站点菜单支持Custom类型，可以链接外部URL和资源
 
 ---
 
-#### Question 2: Header Bar User Settings  
-**English:** What user settings can be configured from the SAP Build Work Zone header bar?
-- A) Only language preferences
-- B) Theme or display settings and language and formatting preferences
-- C) Only theme settings
-- D) Application permissions only
-
-**中文解释:** 从SAP Build Work Zone顶栏可以配置哪些用户设置？
-**答案:** B - 可以配置主题/显示设置和语言/格式偏好
-
----
-
-#### Question 3: Workpages Key Feature
+#### Question 7: Workpages Key Feature
 **English:** What is a key feature of Workpages in SAP Build Work Zone?
-- A) They are static and cannot be modified
-- B) They can be customized with widgets and applications  
-- C) They only support text content
-- D) They require coding skills to create
+- A) They serve as the primary navigation interface
+- B) They can be customized with widgets and applications
+- C) They are automatically generated for each user
+- D) They restrict access to external applications
 
 **中文解释:** SAP Build Work Zone工作页面的关键特性是什么？
-**答案:** B - 可以通过部件和应用程序进行定制
+**正确答案:** B - 可以通过部件和应用程序进行定制
 
 ---
 
-#### Question 4: Workspace Administrator Control
-**English:** What can be optionally enabled by a workspace administrator?
-- A) User authentication only
-- B) Forums and Knowledge Base
-- C) External system connections only  
+#### Question 8: Workspace Access Control
+**English:** All workspaces in SAP Build Work Zone are private by default and require an invitation for access.
+- **True**
+- **False**
+
+**中文解释:** SAP Build Work Zone中的所有工作空间默认都是私有的，需要邀请才能访问。
+**正确答案:** False - 工作空间有三种类型：个人工作空间、公开工作空间和私有工作空间
+
+---
+
+#### Question 9: Workspace Administrator Options
+**English:** What can be optionally enabled by a workspace administrator in SAP Build Work Zone?
+(Multiple Select - 需要选择2个正确答案)
+- A) Forums
+- B) Knowledge Base
+- C) External user authentication
 - D) Site Menu modifications
 
-**中文解释:** 工作区管理员可以选择性启用什么功能？
-**答案:** B - 论坛和知识库功能
+**中文解释:** 工作空间管理员可以选择性启用SAP Build Work Zone中的哪些功能？
+**正确答案:** A和B - 论坛和知识库功能
 
 ---
 
-#### Question 5: Application Integration Methods
+#### Question 10: Application Integration Support
 **English:** SAP Build Work Zone supports the integration of applications solely through direct installation.
 - **True**
 - **False**
 
 **中文解释:** SAP Build Work Zone仅通过直接安装方式支持应用程序集成。
-**答案:** False - 支持多种集成方法（Manual Integration、Content Federation、Content Packages等）
+**正确答案:** False - 支持多种集成方法包括手动集成、内容联邦和内容包等
 
 ---
-
-### 补充检验题目
-
-#### Question 6: Workspace Visibility Types
-**English:** How many types of workspace visibility are available in SAP Build Work Zone?
-- A) 2 types (Public, Private)
-- B) 3 types (My Workspace, Public, Private)
-- C) 4 types (Personal, Team, Public, Private)
-- D) Only Public workspaces
-
-**中文解释:** SAP Build Work Zone中有几种工作区可见性类型？
-**答案:** B - 3种类型（个人工作区、公开工作区、私有工作区）
-
----
-
-#### Question 7: Content Federation Purpose
-**English:** What is the primary purpose of Content Federation in SAP Build Work Zone?
-- A) To create new applications
-- B) To integrate and expose content from external systems
-- C) To manage user permissions only
-- D) To backup data
-
-**中文解释:** SAP Build Work Zone中Content Federation的主要目的是什么？
-**答案:** B - 集成和暴露来自外部系统的内容
-
----
-
-#### Question 8: UI Integration Cards Deployment
-**English:** How are UI Integration Cards typically deployed in SAP Build Work Zone?
-- A) Through manual coding only
-- B) Via Content Packages as ZIP files
-- C) Through database scripts
-- D) By email attachments
-
-**中文解释:** UI Integration Cards通常如何在SAP Build Work Zone中部署？
-**答案:** B - 通过内容包以ZIP文件形式部署
-
----
-
-#### Question 9: User Permission Hierarchy
-**English:** Which user type has the highest level of privileges in SAP Build Work Zone?
-- A) End Users
-- B) Key Users
-- C) Administrators
-- D) External Users
-
-**中文解释:** SAP Build Work Zone中哪种用户类型拥有最高级别的权限？
-**答案:** C - Administrators（管理员）拥有完整平台配置权限
-
----
-
-#### Question 10: Feed Updates Feature
-**English:** What does the Feed Updates feature in Workspaces provide?
-- A) RSS feed integration only
-- B) Chronological interaction tracking and social collaboration
-- C) Email notifications only
-- D) File sharing capabilities
-
-**中文解释:** 工作区中的Feed Updates功能提供什么？
-**答案:** B - 时间轴交互跟踪和社交化协作
-
----
-
-### 测验标准 (Assessment Criteria)
-- **及格要求:** 10题中需答对8题 (80%正确率)
-- **题型分布:** True/False题 + Multiple Choice题
-- **知识覆盖:** 信息架构的核心组件和管理功能
 
 ### 学习重点提示 (Key Learning Focus)
 1. **四大核心组件:** Site Menu, Workpages, Workspaces, Applications的功能特性
-2. **权限管理:** 不同用户类型的权限范围和管理员控制选项  
+2. **定制化能力:** 工作页面和站点菜单的灵活配置选项
 3. **集成能力:** 多种应用集成方法和外部资源连接
-4. **个性化配置:** Header Bar设置和用户体验定制
-5. **协作功能:** 工作区内可选启用的协作工具
+4. **权限管理:** 工作空间的可见性控制和访问管理
+5. **管理功能:** 工作空间管理员的可选功能控制
 
 ### 自测建议 (Self-Assessment Tips)
-- 复习每个章节的核心概念和技术术语
-- 重点理解不同组件间的关系和集成方式
-- 注意区分不同用户角色的权限差异
-- 熟悉各种配置选项和最佳实践建议
+- 重点理解工作页面的灵活性和定制能力
+- 掌握站点菜单的导航框架作用和外部链接支持
+- 区分不同工作空间类型的访问控制机制
+- 熟悉应用程序集成的多种方法和途径
+- 了解管理员在工作空间中的功能控制权限
 
 
