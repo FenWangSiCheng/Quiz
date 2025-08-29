@@ -414,6 +414,9 @@ onMounted(() => {
   margin-bottom: 2.5rem;
   color: #1e293b;
   font-weight: 500;
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
 }
 
 /* 右侧边栏 */
@@ -504,6 +507,9 @@ onMounted(() => {
   font-size: 1rem;
   background-color: #ffffff;
   min-height: 60px;
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
 }
 
 .el-radio:hover,
@@ -578,6 +584,9 @@ onMounted(() => {
   margin: 0;
   line-height: 1.7;
   color: #475569;
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
 }
 
 .action-buttons {
