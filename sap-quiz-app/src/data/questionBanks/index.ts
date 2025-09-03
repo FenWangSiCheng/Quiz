@@ -5,6 +5,7 @@ export { processAutomationQuestions } from './processAutomation'
 export { workZoneQuestions } from './workZone'
 export { buildAppsQuestions } from './buildApps'
 export { certificationQuestions } from './certification'
+export { developAutomateQuestions } from './developAutomate'
 
 // 题库元数据信息
 export const questionBankMetadata = {
@@ -35,5 +36,12 @@ export const questionBankMetadata = {
     count: 60,
     difficulty: 'hard',
     hasExplanations: false
+  },
+  developAutomate: {
+    name: 'Develop and automate with SAP Build (BTP110)',
+    description: '官方学习网站的 Quiz',
+    count: 26,
+    difficulty: 'medium',
+    hasExplanations: true
   }
 } as const

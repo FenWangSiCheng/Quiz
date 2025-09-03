@@ -15,6 +15,7 @@ import {
   workZoneQuestions,
   buildAppsQuestions,
   certificationQuestions,
+  developAutomateQuestions,
   questionBankMetadata
 } from './questionBanks/index'
 
@@ -23,7 +24,8 @@ export const questions: Question[] = [
   ...processAutomationQuestions,
   ...workZoneQuestions,
   ...buildAppsQuestions,
-  ...certificationQuestions
+  ...certificationQuestions,
+  ...developAutomateQuestions
 ]
 
 // 导出题库元数据
@@ -40,6 +42,8 @@ export const getQuestionsByBank = (bankType: keyof typeof questionBankMetadata):
       return buildAppsQuestions
     case 'certification':
       return certificationQuestions
+    case 'developAutomate':
+      return developAutomateQuestions
     default:
       return []
   }
