@@ -6,6 +6,7 @@ export { workZoneQuestions } from './workZone'
 export { buildAppsQuestions } from './buildApps'
 export { certificationQuestions } from './certification'
 export { developAutomateQuestions } from './developAutomate'
+export { exploringBTPQuestions } from './exploringBTP'
 
 // 题库元数据信息
 export const questionBankMetadata = {
@@ -41,6 +42,13 @@ export const questionBankMetadata = {
     name: 'Develop and automate with SAP Build (BTP110)',
     description: '官方学习网站的 Quiz',
     count: 26,
+    difficulty: 'medium',
+    hasExplanations: true
+  },
+  exploringBTP: {
+    name: 'Exploring SAP Business Technology Platform (BTP100)',
+    description: '官方学习网站的 Quiz',
+    count: 50,
     difficulty: 'medium',
     hasExplanations: true
   }

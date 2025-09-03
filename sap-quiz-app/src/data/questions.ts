@@ -16,6 +16,7 @@ import {
   buildAppsQuestions,
   certificationQuestions,
   developAutomateQuestions,
+  exploringBTPQuestions,
   questionBankMetadata
 } from './questionBanks/index'
 
@@ -25,7 +26,8 @@ export const questions: Question[] = [
   ...workZoneQuestions,
   ...buildAppsQuestions,
   ...certificationQuestions,
-  ...developAutomateQuestions
+  ...developAutomateQuestions,
+  ...exploringBTPQuestions
 ]
 
 // 导出题库元数据
