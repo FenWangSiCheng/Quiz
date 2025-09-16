@@ -19,6 +19,23 @@ const router = createRouter({
       name: 'result',
       component: () => import('../views/ResultView.vue'),
     },
+    {
+      path: '/notes',
+      name: 'notes',
+      component: () => import('../views/NotesView.vue'),
+    },
+    {
+      path: '/notes/:course',
+      name: 'course-notes',
+      component: () => import('../views/CourseNotesView.vue'),
+      props: true,
+    },
+    {
+      path: '/notes/:course/:note',
+      name: 'note-detail',
+      component: () => import('../views/NoteDetailView.vue'),
+      props: true,
+    },
   ],
 })
 

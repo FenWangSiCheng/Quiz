@@ -196,10 +196,9 @@ import { computed, ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useQuizStore } from '@/stores/quiz'
 import { questions } from '@/data/questions'
-import { 
+import {
   Document, Edit, CircleCheck, CircleClose, House
 } from '@element-plus/icons-vue'
-import { ElMessage } from 'element-plus'
 import type { Question } from '@/data/questions'
 import type { UserAnswer } from '@/stores/quiz'
 

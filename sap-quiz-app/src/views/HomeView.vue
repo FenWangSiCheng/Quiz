@@ -32,6 +32,13 @@
             <p>选择一个或多个题库进行专项练习</p>
             <el-button type="warning" size="large">选择题库</el-button>
           </div>
+
+          <div class="option-card" @click="navigateToNotes">
+            <div class="option-icon">📚</div>
+            <h3>学习中心</h3>
+            <p>集中学习SAP课程资料，包含详细笔记和音频播客内容</p>
+            <el-button type="primary" size="large">进入学习</el-button>
+          </div>
         </div>
       </section>
 
@@ -185,6 +192,10 @@ const showBankSelector = () => {
   bankSelectorVisible.value = true
 }
 
+const navigateToNotes = () => {
+  router.push('/notes')
+}
+
 const handleBankSelection = (bankIds: string[]) => {
   bankSelectorVisible.value = false
   
@@ -310,7 +321,7 @@ onMounted(() => {
 
 .quiz-options {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   margin-bottom: 0;
 }
