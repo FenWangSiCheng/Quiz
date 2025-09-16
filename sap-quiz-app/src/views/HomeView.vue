@@ -525,6 +525,11 @@ onMounted(() => {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .bank-icon {
@@ -538,6 +543,8 @@ onMounted(() => {
   background: #dbeafe;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .type-list {
