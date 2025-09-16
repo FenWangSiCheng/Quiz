@@ -40,9 +40,9 @@
     <div v-if="currentNoteAudioSrc" class="audio-section">
       <AudioPlayer
         :src="currentNoteAudioSrc"
-        :title="noteInfo.title"
-        :artist="courseInfo.name"
-        :course="courseInfo.name"
+        :title="currentAudioMetadata?.title || noteInfo.title"
+        :artist="currentAudioMetadata?.artist || 'SAP 学习播客'"
+        :course="currentAudioMetadata?.album || courseInfo.name"
       />
     </div>
 
@@ -94,7 +94,7 @@ import { Loading, Warning } from '@element-plus/icons-vue'
 import MarkdownRenderer from '@/components/MarkdownRenderer.vue'
 import AudioPlayer from '@/components/AudioPlayer.vue'
 import { getNoteInfo, readNoteContent } from '@/utils/noteReader'
-import { getNoteAudioSrc } from '@/utils/audioConfig'
+import { getNoteAudioSrc, getAudioMetadata } from '@/utils/audioConfig'
 
 interface NoteInfo {
   title: string
@@ -159,6 +159,11 @@ const courseInfoMap: Record<string, CourseInfo> = {
 // 计算当前笔记的音频源
 const currentNoteAudioSrc = computed(() => {
   return getNoteAudioSrc(course.value, note.value)
+})
+
+// 计算当前笔记的音频元数据
+const currentAudioMetadata = computed(() => {
+  return getAudioMetadata(course.value, note.value)
 })
 
 const loadNoteContent = async () => {
