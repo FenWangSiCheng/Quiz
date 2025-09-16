@@ -5,10 +5,10 @@
 
 // 笔记音频映射 - 根据课程和笔记ID映射音频文件
 export const noteAudioMap: Record<string, string> = {
-  'sap-build-process-automation/unit-1': '/media/sap-build-process-automation/course-audio.mp4'
+  'sap-build-process-automation/unit-1': '/media/sap-build-process-automation/course-audio.m4a'
   // 未来可以添加更多音频映射:
-  // 'sap-build-process-automation/unit-2': '/media/sap-build-process-automation/unit-2-audio.mp4',
-  // 'exploring-sap-btp-btp100/unit-1': '/media/exploring-sap-btp-btp100/unit-1-audio.mp4',
+  // 'sap-build-process-automation/unit-2': '/media/sap-build-process-automation/unit-2-audio.m4a',
+  // 'exploring-sap-btp-btp100/unit-1': '/media/exploring-sap-btp-btp100/unit-1-audio.m4a',
 }
 
 /**
