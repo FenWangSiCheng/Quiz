@@ -43,7 +43,12 @@
         >
           <div class="note-header">
             <h3 class="note-title">{{ note.title }}</h3>
-            <span class="note-unit">{{ note.unit }}</span>
+            <div class="note-badges">
+              <span class="note-unit">{{ note.unit }}</span>
+              <span v-if="note.hasAudio" class="podcast-badge" title="此单元包含音频内容">
+                🎧 播客
+              </span>
+            </div>
           </div>
           <p class="note-preview">{{ note.preview }}</p>
           <div class="note-meta">
@@ -62,6 +67,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { getCourseNotes } from '@/utils/noteReader'
+import { hasNoteAudio } from '@/utils/audioConfig'
 
 interface Note {
   id: string
@@ -70,6 +76,7 @@ interface Note {
   preview: string
   type: string
   estimatedReadTime: number
+  hasAudio: boolean
 }
 
 interface CourseInfo {
@@ -137,7 +144,8 @@ onMounted(() => {
     unit: noteFile.unit || '',
     preview: `${noteFile.title}的详细学习内容...`,
     type: '学习笔记',
-    estimatedReadTime: 15
+    estimatedReadTime: 15,
+    hasAudio: hasNoteAudio(course.value, noteFile.id)
   }))
 })
 </script>
@@ -282,6 +290,13 @@ onMounted(() => {
   gap: 1rem;
 }
 
+.note-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
 .note-title {
   font-size: 1.25rem;
   font-weight: 600;
@@ -299,6 +314,26 @@ onMounted(() => {
   font-size: 0.75rem;
   font-weight: 500;
   white-space: nowrap;
+}
+
+.podcast-badge {
+  background: #dbeafe;
+  color: #3b82f6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: help;
+  transition: all 0.2s ease;
+}
+
+.podcast-badge:hover {
+  background: #bfdbfe;
+  transform: translateY(-1px);
 }
 
 .note-preview {
@@ -365,6 +400,12 @@ onMounted(() => {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+  }
+
+  .note-badges {
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
   }
 }
 

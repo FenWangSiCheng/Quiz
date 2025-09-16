@@ -36,6 +36,16 @@
       </div>
     </header>
 
+    <!-- 播客音频区域 -->
+    <div v-if="currentNoteAudioSrc" class="audio-section">
+      <AudioPlayer
+        :src="currentNoteAudioSrc"
+        :title="noteInfo.title"
+        :artist="courseInfo.name"
+        :course="courseInfo.name"
+      />
+    </div>
+
     <!-- 主内容区域 -->
     <main class="main-content">
       <div class="content-container">
@@ -82,7 +92,9 @@ import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { Loading, Warning } from '@element-plus/icons-vue'
 import MarkdownRenderer from '@/components/MarkdownRenderer.vue'
+import AudioPlayer from '@/components/AudioPlayer.vue'
 import { getNoteInfo, readNoteContent } from '@/utils/noteReader'
+import { getNoteAudioSrc } from '@/utils/audioConfig'
 
 interface NoteInfo {
   title: string
@@ -144,6 +156,10 @@ const courseInfoMap: Record<string, CourseInfo> = {
   }
 }
 
+// 计算当前笔记的音频源
+const currentNoteAudioSrc = computed(() => {
+  return getNoteAudioSrc(course.value, note.value)
+})
 
 const loadNoteContent = async () => {
   loading.value = true
@@ -527,5 +543,13 @@ onUnmounted(() => {
   .header-content {
     padding: 0 1rem;
   }
+}
+
+.audio-section {
+  width: 100%;
+  padding: 0 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #f8fafc;
 }
 </style>
