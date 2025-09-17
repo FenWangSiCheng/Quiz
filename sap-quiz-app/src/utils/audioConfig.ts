@@ -37,6 +37,11 @@ const audioConfigurations: CourseAudioConfig[] = [
         title: 'Unit 2: 重用现有内容',
         audioFile: 'reusing-content.m4a',
         description: '学习如何重用现有的SAP Build Process Automation内容'
+      },
+      'unit-3': {
+        title: 'Unit 3: 基础流程构建',
+        audioFile: 'basic-process-building.m4a',
+        description: '学习如何在SAP Build Process Automation中进行基础流程构建'
       }
     }
   }
