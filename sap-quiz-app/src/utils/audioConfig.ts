@@ -42,6 +42,11 @@ const audioConfigurations: CourseAudioConfig[] = [
         title: 'Unit 3: 基础流程构建',
         audioFile: 'basic-process-building.m4a',
         description: '学习如何在SAP Build Process Automation中进行基础流程构建'
+      },
+      'unit-4': {
+        title: 'Unit 4: 自动化概述',
+        audioFile: 'automations-overview.m4a',
+        description: '学习SAP Build Process Automation中的自动化概述'
       }
     }
   }
