@@ -47,6 +47,11 @@ const audioConfigurations: CourseAudioConfig[] = [
         title: 'Unit 4: 自动化概述',
         audioFile: 'automations-overview.m4a',
         description: '学习SAP Build Process Automation中的自动化概述'
+      },
+      'unit-5': {
+        title: 'Unit 5: 高级流程构建特性',
+        audioFile: 'advanced-process-features.m4a',
+        description: '学习SAP Build Process Automation中的决策和操作集成'
       }
     }
   }
