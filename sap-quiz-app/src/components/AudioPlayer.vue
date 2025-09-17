@@ -130,6 +130,7 @@ const speedOptions = [
   { label: '1x', value: 1 },
   { label: '1.25x', value: 1.25 },
   { label: '1.5x', value: 1.5 },
+  { label: '1.8x', value: 1.8 },
   { label: '2x', value: 2 }
 ]
 

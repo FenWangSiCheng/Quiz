@@ -27,31 +27,31 @@ const NOTE_FILE_MAP: Record<string, Record<string, NoteFile>> = {
     },
     'unit-2': {
       id: 'unit-2',
-      title: 'Creating Your First Process',
+      title: 'Reusing Existing SAP Build Process Automation Content',
       filePath: 'Unit 2 学习笔记.md',
       unit: 'Unit 2'
     },
     'unit-3': {
       id: 'unit-3',
-      title: 'Building Automations',
+      title: 'Performing Basic Process Building in SAP Build Process Automation',
       filePath: 'Unit 3 学习笔记.md',
       unit: 'Unit 3'
     },
     'unit-4': {
       id: 'unit-4',
-      title: 'Integrating with SAP Systems',
+      title: 'Explaining Automations in an Overview',
       filePath: 'Unit 4 学习笔记.md',
       unit: 'Unit 4'
     },
     'unit-5': {
       id: 'unit-5',
-      title: 'Process Monitoring and Analytics',
+      title: 'Using Features of Advanced Process Building in SAP Build Process Automation',
       filePath: 'Unit 5 学习笔记.md',
       unit: 'Unit 5'
     },
     'unit-6': {
       id: 'unit-6',
-      title: 'Advanced Topics',
+      title: 'Using APIs for Integration in SAP Build Process Automation',
       filePath: 'Unit 6 学习笔记.md',
       unit: 'Unit 6'
     }
@@ -59,49 +59,49 @@ const NOTE_FILE_MAP: Record<string, Record<string, NoteFile>> = {
   'exploring-sap-business-technology-platform-btp100': {
     'unit-1': {
       id: 'unit-1',
-      title: 'Introduction to SAP BTP',
+      title: 'Unit 1: Exploring SAP Business Technology Platform',
       filePath: 'Unit 1 学习笔记.md',
       unit: 'Unit 1'
     },
     'unit-2': {
       id: 'unit-2',
-      title: 'Platform Architecture',
+      title: 'Unit 2: Deep Dive into SAP Business Technology Platform',
       filePath: 'Unit 2 学习笔记.md',
       unit: 'Unit 2'
     },
     'unit-3': {
       id: 'unit-3',
-      title: 'Development Services',
+      title: 'Unit 3: Application Development and Automation in SAP BTP',
       filePath: 'Unit 3 学习笔记.md',
       unit: 'Unit 3'
     },
     'unit-4': {
       id: 'unit-4',
-      title: 'Integration Services',
+      title: 'Unit 4: Integration and APIs in SAP BTP',
       filePath: 'Unit 4 学习笔记.md',
       unit: 'Unit 4'
     },
     'unit-5': {
       id: 'unit-5',
-      title: 'Data and Analytics',
+      title: 'Unit 5: Data and Analytics in SAP BTP',
       filePath: 'Unit 5 学习笔记.md',
       unit: 'Unit 5'
     },
     'unit-6': {
       id: 'unit-6',
-      title: 'AI and Machine Learning',
+      title: 'Unit 6: Artificial Intelligence in SAP BTP',
       filePath: 'Unit 6 学习笔记.md',
       unit: 'Unit 6'
     },
     'unit-7': {
       id: 'unit-7',
-      title: 'Security and Compliance',
+      title: 'Unit 7: Security and Identity Management in SAP BTP',
       filePath: 'Unit 7 学习笔记.md',
       unit: 'Unit 7'
     },
     'unit-8': {
       id: 'unit-8',
-      title: 'Advanced Topics',
+      title: 'Unit 8: Sustainability in SAP BTP',
       filePath: 'Unit 8 学习笔记.md',
       unit: 'Unit 8'
     }
@@ -109,31 +109,31 @@ const NOTE_FILE_MAP: Record<string, Record<string, NoteFile>> = {
   'develop-and-automate-with-sap-build-btp110': {
     'unit-1': {
       id: 'unit-1',
-      title: 'Introduction to SAP Build',
+      title: 'Develop and automate with SAP Build - Unit 1',
       filePath: 'Unit 1 学习笔记.md',
       unit: 'Unit 1'
     },
     'unit-2': {
       id: 'unit-2',
-      title: 'Building Applications',
+      title: 'Develop and automate with SAP Build - Unit 2',
       filePath: 'Unit 2 学习笔记.md',
       unit: 'Unit 2'
     },
     'unit-3': {
       id: 'unit-3',
-      title: 'Process Automation',
+      title: 'Develop and automate with SAP Build - Unit 3',
       filePath: 'Unit 3 学习笔记.md',
       unit: 'Unit 3'
     },
     'unit-4': {
       id: 'unit-4',
-      title: 'Integration and Connectivity',
+      title: 'Develop and automate with SAP Build - Unit 4',
       filePath: 'Unit 4 学习笔记.md',
       unit: 'Unit 4'
     },
     'unit-5': {
       id: 'unit-5',
-      title: 'Advanced Features',
+      title: 'Develop and automate with SAP Build - Unit 5',
       filePath: 'Unit 5 学习笔记.md',
       unit: 'Unit 5'
     }
@@ -141,31 +141,31 @@ const NOTE_FILE_MAP: Record<string, Record<string, NoteFile>> = {
   'developing-apps-with-sap-build-apps': {
     'unit-1': {
       id: 'unit-1',
-      title: 'Getting Started with SAP Build Apps',
+      title: 'SAP Build Apps - Unit 1',
       filePath: 'Unit 1 学习笔记.md',
       unit: 'Unit 1'
     },
     'unit-2': {
       id: 'unit-2',
-      title: 'UI Development',
+      title: 'SAP Build Apps - Unit 2',
       filePath: 'Unit 2 学习笔记.md',
       unit: 'Unit 2'
     },
     'unit-3': {
       id: 'unit-3',
-      title: 'Data Binding and Logic',
+      title: 'SAP Build Apps - Unit 3',
       filePath: 'Unit 3 学习笔记.md',
       unit: 'Unit 3'
     },
     'unit-4': {
       id: 'unit-4',
-      title: 'Integration and Deployment',
+      title: 'SAP Build Apps - Unit 4',
       filePath: 'Unit 4 学习笔记.md',
       unit: 'Unit 4'
     },
     'unit-5': {
       id: 'unit-5',
-      title: 'Advanced Topics',
+      title: 'SAP Build Apps - Unit 5',
       filePath: 'Unit 5 学习笔记.md',
       unit: 'Unit 5'
     }
@@ -173,7 +173,7 @@ const NOTE_FILE_MAP: Record<string, Record<string, NoteFile>> = {
   'designing-sap-build-work-zone': {
     'unit-1': {
       id: 'unit-1',
-      title: 'Work Zone Fundamentals',
+      title: 'Designing SAP Build Work Zone — Unit 1',
       filePath: 'Unit 1 学习笔记.md',
       unit: 'Unit 1'
     }
