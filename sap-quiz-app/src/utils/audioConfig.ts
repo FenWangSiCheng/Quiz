@@ -52,6 +52,11 @@ const audioConfigurations: CourseAudioConfig[] = [
         title: 'Unit 5: 高级流程构建特性',
         audioFile: 'advanced-process-features.m4a',
         description: '学习SAP Build Process Automation中的决策和操作集成'
+      },
+      'unit-6': {
+        title: 'Unit 6: 使用API进行集成',
+        audioFile: 'unit-6-content.m4a',
+        description: '学习SAP Build Process Automation中使用API进行系统集成'
       }
     }
   }
