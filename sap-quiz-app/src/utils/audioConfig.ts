@@ -59,6 +59,18 @@ const audioConfigurations: CourseAudioConfig[] = [
         description: '学习SAP Build Process Automation中使用API进行系统集成'
       }
     }
+  },
+  {
+    courseId: 'develop-and-automate-with-sap-build-btp110',
+    courseName: 'Develop and automate with SAP Build (BTP110)',
+    audioPath: '/media/develop-and-automate-with-sap-build-btp110',
+    units: {
+      'unit-1': {
+        title: 'Unit 1: SAP Build 概述',
+        audioFile: 'unit-1-overview.m4a',
+        description: '学习SAP Build平台概述和开发自动化基础'
+      }
+    }
   }
   // 未来可以轻松添加其他课程:
   /*
@@ -70,17 +82,6 @@ const audioConfigurations: CourseAudioConfig[] = [
       'unit-1': {
         title: 'Unit 1: BTP Overview',
         audioFile: 'unit-1-overview.m4a'
-      }
-    }
-  },
-  {
-    courseId: 'designing-sap-build-work-zone',
-    courseName: 'Designing SAP Build Work Zone',
-    audioPath: '/media/designing-sap-build-work-zone',
-    units: {
-      'unit-1': {
-        title: 'Unit 1: Work Zone Basics',
-        audioFile: 'unit-1-basics.m4a'
       }
     }
   }
