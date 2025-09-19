@@ -74,6 +74,16 @@ const audioConfigurations: CourseAudioConfig[] = [
         title: 'Unit 2: SAP Build Apps 实践',
         audioFile: 'unit-2-sap-build-apps.m4a',
         description: '深入介绍 SAP Build Apps 平台的核心功能与应用开发流程'
+      },
+      'unit-3': {
+        title: 'Unit 3: SAP Build Process Automation 实践',
+        audioFile: 'unit-3-sap-build-process-automation.m4a',
+        description: '讲解如何在 SAP Build 中利用流程自动化提升业务效率'
+      },
+      'unit-4': {
+        title: 'Unit 4: SAP Build Work Zone 应用',
+        audioFile: 'unit-4-sap-build-work-zone.m4a',
+        description: '介绍 SAP Build Work Zone 的关键功能与协同场景'
       }
     }
   }
