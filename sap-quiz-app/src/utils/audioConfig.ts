@@ -69,6 +69,11 @@ const audioConfigurations: CourseAudioConfig[] = [
         title: 'Unit 1: SAP Build 概述',
         audioFile: 'unit-1-overview.m4a',
         description: '学习SAP Build平台概述和开发自动化基础'
+      },
+      'unit-2': {
+        title: 'Unit 2: SAP Build Apps 实践',
+        audioFile: 'unit-2-sap-build-apps.m4a',
+        description: '深入介绍 SAP Build Apps 平台的核心功能与应用开发流程'
       }
     }
   }
