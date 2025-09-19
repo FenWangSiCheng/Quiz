@@ -130,12 +130,6 @@ const NOTE_FILE_MAP: Record<string, Record<string, NoteFile>> = {
       title: 'Develop and automate with SAP Build - Unit 4',
       filePath: 'Unit 4 学习笔记.md',
       unit: 'Unit 4'
-    },
-    'unit-5': {
-      id: 'unit-5',
-      title: 'Develop and automate with SAP Build - Unit 5',
-      filePath: 'Unit 5 学习笔记.md',
-      unit: 'Unit 5'
     }
   },
   'developing-apps-with-sap-build-apps': {
