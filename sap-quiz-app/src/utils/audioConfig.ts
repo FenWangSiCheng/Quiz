@@ -86,6 +86,18 @@ const audioConfigurations: CourseAudioConfig[] = [
         description: '介绍 SAP Build Work Zone 的关键功能与协同场景'
       }
     }
+  },
+  {
+    courseId: 'designing-sap-build-work-zone',
+    courseName: 'Designing SAP Build Work Zone',
+    audioPath: '/media/designing-sap-build-work-zone',
+    units: {
+      'unit-1': {
+        title: 'Unit 1: Designing SAP Build Work Zone 信息架构',
+        audioFile: 'unit-1-sap-build-work-zone.m4a',
+        description: '官方播客：Designing SAP Build Work Zone — Unit 1 内容'
+      }
+    }
   }
   // 未来可以轻松添加其他课程:
   /*
