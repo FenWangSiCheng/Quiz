@@ -5,6 +5,8 @@ import {
   workZoneQuestions,
   buildAppsQuestions,
   certificationQuestions,
+  developAutomateQuestions,
+  exploringBTPQuestions,
   questionBankMetadata
 } from './questionBanks/index'
 
@@ -84,6 +86,10 @@ export const getQuestionsByBankId = (bankId: string): Question[] => {
       return buildAppsQuestions
     case 'certification':
       return certificationQuestions
+    case 'developAutomate':
+      return developAutomateQuestions
+    case 'exploringBTP':
+      return exploringBTPQuestions
     default:
       return []
   }

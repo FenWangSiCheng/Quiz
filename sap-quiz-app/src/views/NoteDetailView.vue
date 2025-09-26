@@ -89,7 +89,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { Loading, Warning } from '@element-plus/icons-vue'
 import MarkdownRenderer from '@/components/MarkdownRenderer.vue'
 import AudioPlayer from '@/components/AudioPlayer.vue'
@@ -113,7 +113,6 @@ interface TOCItem {
 }
 
 
-const router = useRouter()
 const route = useRoute()
 
 const course = computed(() => route.params.course as string)
