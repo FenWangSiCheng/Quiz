@@ -185,7 +185,7 @@ const filteredAnswers = computed(() => {
     case 'correct':
       return allAnswers.value.map((answer, index) => ({ answer, index }))
         .filter(({ answer }) => answer && answer.isCorrect)
-        .map(({ answer, index }) => answer)
+        .map(({ answer }) => answer)
     case 'wrong':
       return allAnswers.value.map((answer, index) => ({ answer, index }))
         .filter(({ answer }) => answer && !answer.isCorrect)

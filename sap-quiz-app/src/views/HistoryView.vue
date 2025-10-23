@@ -101,7 +101,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useQuizStore } from '@/stores/quiz'
 import { ElMessageBox, ElMessage } from 'element-plus'
@@ -112,7 +112,8 @@ const quizStore = useQuizStore()
 
 const history = computed(() => {
   // 访问refreshTrigger以监听历史记录的变化
-  quizStore.historyRefreshTrigger.value
+  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+  quizStore.historyRefreshTrigger
   return quizStore.getHistory()
 })
 
