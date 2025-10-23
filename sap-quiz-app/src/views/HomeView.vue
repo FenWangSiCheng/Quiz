@@ -33,6 +33,13 @@
             <el-button type="warning" size="large">选择题库</el-button>
           </div>
 
+          <div class="option-card" @click="navigateToHistory">
+            <div class="option-icon">📊</div>
+            <h3>测试历史</h3>
+            <p>查看历史成绩、学习进度和答题详情</p>
+            <el-button type="success" size="large">查看历史</el-button>
+          </div>
+
           <div class="option-card" @click="navigateToNotes">
             <div class="option-icon">📚</div>
             <h3>学习中心</h3>
@@ -196,6 +203,10 @@ const navigateToNotes = () => {
   router.push('/notes')
 }
 
+const navigateToHistory = () => {
+  router.push('/history')
+}
+
 const handleBankSelection = (bankIds: string[]) => {
   bankSelectorVisible.value = false
   
@@ -321,7 +332,7 @@ onMounted(() => {
 
 .quiz-options {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-bottom: 0;
 }
